@@ -1,0 +1,68 @@
+{
+  "name": "oe_ratings_engine",
+  "version": "0.1.0",
+  "description": "TBD",
+  "author": "Andriy Kulak",
+  "license": "Proprietary",
+  "scripts": {
+    "serve": "NODE_ENV='development' nodemon --debug src/app.js --exec babel-node",
+    "serve:development": "NODE_ENV='development' nodemon --debug src/app.js --exec babel-node",
+    "serve:debug": "NODE_ENV='debug' nodemon --debug src/app.js --exec babel-node",
+    "build": "babel ./src -d ./lib --copy-files",
+    "start": "NODE_ENV='production' node ./lib/app.js",
+    "test": " nodemon --exec 'mocha --compilers js:babel-core/register test/*.js --timeout 5000' || true",
+    "postinstall": "npm run build"
+  },
+  "engines": {
+    "node": "5.4.1"
+  },
+  "dependencies": {
+    "app-module-path": "^1.1.0",
+    "babel-cli": "^6.11.4",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "body-parser": "^1.13.3",
+    "express": "^4.14.0",
+    "http": "0.0.0",
+    "mongoose": "^4.5.3",
+    "nodemon": "^1.9.2"
+  },
+  "devDependencies": {
+    "babel-register": "^6.23.0",
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "eslint": "^3.16.1",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
+    "mocha": "^3.2.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "extends": "airbnb",
+    "rules": {
+      "import/no-mutable-exports": "off",
+      "eol-last": "off",
+      "comma-dangle": "off",
+      "no-underscore-dangle": "off",
+      "react/sort-comp": "off",
+      "class-methods-use-this": "off",
+      "import/no-named-as-default-member": "off",
+      "no-console": "off",
+      "no-use-before-define": "off",
+      "arrow-body-style": "off",
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": true
+        }
+      ]
+    }
+  }
+}

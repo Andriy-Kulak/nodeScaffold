@@ -1,0 +1,11 @@
+.tmp
+.tscache
+.idea/
+docs
+node_modules
+npm-debug.log
+report
+vendor
+lib
+./vscode
+**/*.DS_Store
